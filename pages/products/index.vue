@@ -1,0 +1,44 @@
+<template>
+  <div v-if="products">
+    <offer-banner :action="false" />
+    <div class="container mx-auto py-4 px-4 md:px-8">
+      <div class="md:bg-white md:shadow md:rounded-md overflow-hidden">
+        <div
+          class="md:p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        >
+          <product-card
+            v-for="(product, index) in products"
+            :key="index"
+            :product="product"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex';
+import ProductCard from '@/components/Cards/ProductCard.vue';
+import OfferBanner from '@/components/Sections/OfferBanner.vue';
+
+export default {
+  components: {
+    ProductCard,
+    OfferBanner
+  },
+  computed: {
+    ...mapGetters({
+      products: 'products/products'
+    })
+  },
+  created() {
+    this.getProducts();
+  },
+  methods: {
+    ...mapActions({
+      getProducts: 'products/get'
+    })
+  }
+};
+</script>
