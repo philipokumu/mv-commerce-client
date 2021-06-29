@@ -108,7 +108,7 @@ export default {
   publicRuntimeConfig: {
     baseURL:
       process.env.NODE_ENV === 'production'
-        ? 'https://ecoseaproducts.com/api'
+        ? 'https://peaceful-beyond-74495.herokuapp.com/api'
         : 'http://127.0.0.1:8000/api',
     paypalSandboxToken:
       'AXeRK9Trks2aVyKDVWOo5SNW2r-k8FTkTMoW4MYzMmkagfolOmHUtwed8Qj7T_WRx8YhaRZw27TEYbpk',
@@ -119,7 +119,7 @@ export default {
   axios: {
     baseURL:
       process.env.NODE_ENV === 'production'
-        ? 'https://ecoseaproducts.com/api'
+        ? 'https://peaceful-beyond-74495.herokuapp.com/api'
         : 'http://127.0.0.1:8000/api'
   },
 
